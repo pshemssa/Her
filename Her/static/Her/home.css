@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #222;
+  color: #fff;
+}
+
+
+.body-main{
+  background-image: url('../Images/sewing.jpg');
+  height: 700px;
+}
+
+  .main-content {
+    background: url('../Images/pregnant+women.jpg') center/cover no-repeat;
+    height: 850px;
+  
+  }
+  .main {
+background-image: url('../Images/sewing.jpg');
+height: 700px;
+  }
+
+.overlay {
+  background: rgba(0,0,0,0.45);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 1;
+}
+.nav{
+  position: relative;
+  z-index: 2;
+  margin: 2rem;
+  font-size: large;
+  border-radius: 10px;
+  padding: 2rem;
+  color: #fff;
+  max-width: 700px;
+  word-spacing: 30%;
+}
+.content {
+  position: relative;
+  z-index: 2;
+  margin: 2rem;
+  color: #fff;
+  max-width: 700px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 2rem;
+}
+.content h1 {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2.2rem;
+  margin: 0 0 1rem 0;
+}
+.content h2 {
+  color: #2ec4b6;
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+.support {
+  width:100% ;
+  height: 100%;
+  margin:50%;
+}
+.content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.register-link {
+  color: #2ec4b6;
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+}
+.login-link {
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+.header-link {
+  position:absolute;
+  top:1.5rem;
+  right:2rem;
+  color:#ffffff;
+  text-decoration:none;
+ margin-right: 60%;
+}
+.footer {
+  background: #23233b;
+  padding: 2rem 2rem 1rem 2rem;
+  color: #fff;
+  font-size: 1rem;
+  opacity: inherit;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+ justify-content: right;
+ gap: 2rem;
+
+}
+.footer-links a {
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: color 0.2s;
+  color: #bbb;
+}
+.footer-links a:hover {
+  color: #2ec4b6;
+}
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.footer-contact div {
+  min-width: 180px;
+  justify-items: right;
+  color: #bbb;
+}
+.footer-social {
+  margin-top: 0.5rem;
+}
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+.footer-copyright {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #bbb;
+  margin-top: 1rem;
+}
+@media (max-width: 900px) {
+  .main-content, .footer { min-height: unset; }
+}

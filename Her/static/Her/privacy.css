@@ -1,0 +1,119 @@
+
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #222;
+    color: #fff;
+  }
+  .main-content {
+    background: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+    height: 750px;
+  }
+  .overlay {
+    background: rgba(0,0,0,0.45);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
+  }
+  .header-link {
+    position:absolute;
+    top:1.5rem;
+    right:2rem;
+    color:#fff;
+    text-decoration:none;
+    font-size:1.1rem;
+  }
+  .content {
+    position: relative;
+    z-index: 2;
+    margin: 2rem;
+    color: #fff;
+    max-width: 700px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    padding: 2rem;
+  }
+
+  .content h1 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2.2rem;
+    margin: 0 0 1rem 0;
+  }
+  .content h2 {
+    color: #2ec4b6;
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 1.3rem;
+  }
+  .blog-list {
+    margin-top: 1.5rem;
+  }
+  .blog-post {
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .blog-post h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2ec4b6;
+  }
+  .blog-post a {
+    color: #2ec4b6;
+    text-decoration: underline;
+    font-size: 1rem;
+  }
+  .footer {
+    background: #23233b;
+    padding: 2rem 2rem 1rem 2rem;
+    color: #fff;
+    font-size: 1rem;
+    opacity: inherit;
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: right;
+   gap: 2rem;
+ 
+  }
+  .footer-links a {
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 0.2s;
+    color: #bbb;
+  }
+  .footer-links a:hover {
+    color: #2ec4b6;
+  }
+  .footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  .footer-contact div {
+    min-width: 180px;
+    justify-items: right;
+    color: #bbb;
+  }
+  .footer-social {
+    margin-top: 0.5rem;
+  }
+  .footer-social img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+  .footer-copyright {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #bbb;
+    margin-top: 1rem;
+  }
+  @media (max-width: 900px) {
+    .main-content, .footer { min-height: unset; }
+  }
+  
