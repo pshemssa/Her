@@ -6,5 +6,5 @@ from .models import CustomUser
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
-    list_display = ['first_name', 'last_name', 'phone_number', 'is_staff', 'is_active']
+    list_display = ['username', 'email', 'is_staff', 'is_active']
    

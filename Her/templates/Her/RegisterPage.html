@@ -22,12 +22,11 @@
     </nav>
 
     <div class="content" style="margin: 3rem auto; max-width: 400px;">
-      <form method="POST" action="/register/">
+      <form method="POST" action="/Register">
         {% csrf_token %}
         {{ form.as_p }}
-        <p><input type="text" name="first_name" placeholder="First Name" class="form-control" required></p>
-        <p><input type="text" name="last_name" placeholder="Last Name" class="form-control" required></p>
-        <p><input type="text" name="phone_number" placeholder="Phone Number" class="form-control" required></p>
+        <p><input type="text" name="userame" placeholder="userame" class="form-control" required></p>
+        <p><input type="text" name="Email" placeholder="Email" class="form-control" required></p>
         <p><input type="password" name="password" placeholder="Password" class="form-control" required></p>
         <p><input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control" required></p>
         <p><button type="submit" class="btn btn-primary">Register</button></p>

@@ -22,10 +22,10 @@
     </nav>
 
     <div class="content" style="margin: 3rem auto; max-width: 400px;">
-      <form method="POST" action="/login/">
+      <form method="POST" action="Login">
         {% csrf_token %}
-        <p><input type="text" name="first_name" placeholder="First Name" class="form-control" required></p>
-        <p><input type="text" name="phone_number" placeholder="Phone Number" class="form-control" required></p>
+        <p><input type="text" name="username" placeholder="username" class="form-control" required></p>
+        <p><input type="text" name="email" placeholder="email" class="form-control" required></p>
         <p><input type="password" name="password" placeholder="Password" class="form-control" required></p>
         <p><button type="submit" class="btn btn-success">Login</button></p>
       </form>
