@@ -20,9 +20,9 @@ body {
 background-image: url('../Images/sewing.jpg');
 height: 700px;
   }
- .main-bg{
-  background-image: url('../Images/pregnant.avif') center/ cover no-repeat;
-  height: 650px;
+ .main-body{
+  background-image: url('../Images/pregnant+women.jpg');
+
 }
 .overlay {
   background: rgba(0,0,0,0.45);
