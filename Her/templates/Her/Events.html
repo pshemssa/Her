@@ -37,18 +37,31 @@
               </div>
             </div>
           </nav>
-          <div class="content" style="margin-top: 8rem;margin-right: 30rem; margin-left:15rem">
-  <div class="background" >
-    <div class="overlay-box">
-      <h2>Event Details</h2>
-      <p style="font-size:larger;">Crafts and skills showcasing<br>
-        04 July 2025,  15:30 | ZOOM Meeting<br>
-         join using: <a href>https://app.zoom.us/wc/9039004973/join?fromPWA-1 </a></p>
-      <a href=" https://app.zoom.us/wc/9039004973/join?fromPWA-1" class="button">JOIN NOW</a></p>
+         <div class="content" style="margin-top: 8rem; margin-right: 30rem; margin-left: 15rem">
+ <div class="container mt-5">
+  <h2 class="text-white mb-4">Upcoming Events</h2>
+  {% for event in events %}
+    <div class="card mb-3 bg-dark text-white">
+      <div class="card-body">
+        <h5 class="card-title">{{ event.title }}</h5>
+        <p class="card-text">
+          <strong>Date:</strong> {{ event.date }}<br>
+          <strong>Time:</strong> {{ event.time }}<br>
+          <strong>Location:</strong>
+          {% if event.link %}
+            <a href="{{ event.link }}" target="_blank" class="text-info">Join Here</a>
+          {% else %}
+            {{ event.location }}
+          {% endif %}
+        </p>
+      </div>
     </div>
-    </div>
-    </div>
-    </div>
+  {% empty %}
+    <p class="text-light">No upcoming events at the moment.</p>
+  {% endfor %}
+</div>
+</div>
+</div>
     <div class="footer">
         <div class="footer-links">
           <a href="Privacy">privacy policy</a>

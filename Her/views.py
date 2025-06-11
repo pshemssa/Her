@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import get_user_model
-from django.contrib.auth import login
+from django.contrib.auth import get_user_model, login
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth.hashers import make_password
+from rest_framework import generics
+from .models import Event
+from .serializers import EventSerializer
 
 User = get_user_model()
+
 def Home(request):
     return render(request, 'Her/Home.html')
 
@@ -20,10 +22,14 @@ def Skills(request):
     return render(request, 'Her/Skills.html')
 
 def Events(request):
-    return render(request, 'Her/Events.html')
+    events = Event.objects.all().order_by('date')
+    return render(request, 'Her/Events.html', {'events': events})
 
+class EventListCreateView(generics.ListCreateAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
 
-@csrf_exempt  # Only use during testing — ideally remove it and use {% csrf_token %} in your form
+@csrf_exempt
 def Register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -41,11 +47,11 @@ def Register(request):
             user = User.objects.create_user(
                 username=username,
                 email=email,
-                password=password1  # automatically hashed
+                password=password1
             )
             login(request, user)
             messages.success(request, 'Registration successful!')
-            return redirect('Home')  # Use a named URL pattern, not a template path
+            return redirect('home')
 
     return render(request, 'Her/RegisterPage.html')
 
@@ -61,7 +67,7 @@ def Signin(request):
             user = form.get_user()
             login(request, user)
             messages.success(request, f'Welcome back, {user.username}!')
-            return redirect('Home')
+            return redirect('home')
         else:
             messages.error(request, 'Invalid username or password.')
     else:
