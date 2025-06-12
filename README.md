@@ -18,3 +18,5 @@ python manage.py runserver
 link to figma designs: https://www.figma.com/design/t1A6uCUv6CDIwK2GJ5QLsn/Untitled?node-id=0-1&m=dev&t=BnhRFqagmurCA58G-1
 
 link to demo : https://drive.google.com/file/d/1uB2O8kIMCo3ZfiXg8t1FADXflgKMkZlF/view?usp=sharing
+
+github repo link : https://github.com/pshemssa/Her/tree/master
