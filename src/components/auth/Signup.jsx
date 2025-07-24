@@ -1,6 +1,19 @@
-import React, { useState } from 'react';
-import { X, FileText, Shield, Users, ShoppingCart, AlertTriangle, Mail, Menu, Home, User } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  X,
+  FileText,
+  Shield,
+  Users,
+  ShoppingCart,
+  AlertTriangle,
+  Mail,
+  Menu,
+  Home,
+  User,
+} from "lucide-react";
 import NewNavBar from "./NewNavBar";
+import { notification } from "antd";
+import axios from "axios";
 
 const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
   const [hasScrolledToBottom, setHasScrolledToBottom] = useState(false);
@@ -37,7 +50,7 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
         </div>
 
         {/* Content */}
-        <div 
+        <div
           className="p-6 overflow-y-auto max-h-[60vh]"
           onScroll={handleScroll}
         >
@@ -45,11 +58,16 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
             {/* Introduction */}
             <div className="mb-8">
               <p className="text-gray-700 leading-relaxed">
-                By registering for or using <span className="font-semibold text-blue-600">Inshuti y'umubyeyi</span>, 
-                you agree to abide by the following terms and conditions which govern your access to the platform. 
-                Inshuti y'umubyeyi is a digital platform designed to support pregnant women in Rwanda through 
-                training programs, online support groups, and a product marketplace. These terms ensure a safe, 
-                respectful, and secure experience for all users.
+                By registering for or using{" "}
+                <span className="font-semibold text-blue-600">
+                  Inshuti y'umubyeyi
+                </span>
+                , you agree to abide by the following terms and conditions which
+                govern your access to the platform. Inshuti y'umubyeyi is a
+                digital platform designed to support pregnant women in Rwanda
+                through training programs, online support groups, and a product
+                marketplace. These terms ensure a safe, respectful, and secure
+                experience for all users.
               </p>
             </div>
 
@@ -58,11 +76,16 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
               <div className="flex items-start space-x-3">
                 <AlertTriangle className="h-5 w-5 text-amber-600 mt-0.5" />
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Age Requirements & Account Responsibility</h3>
+                  <h3 className="font-semibold text-amber-800 mb-2">
+                    Age Requirements & Account Responsibility
+                  </h3>
                   <p className="text-amber-700">
-                    To use Inshuti y'Umubyeyi, you must be at least 18 years old. During registration, you agree 
-                    to provide accurate and up-to-date information about yourself and maintain the confidentiality 
-                    of your account login details. You are solely responsible for all activity that occurs under your account.
+                    To use Inshuti y'Umubyeyi, you must be at least 18 years
+                    old. During registration, you agree to provide accurate and
+                    up-to-date information about yourself and maintain the
+                    confidentiality of your account login details. You are
+                    solely responsible for all activity that occurs under your
+                    account.
                   </p>
                 </div>
               </div>
@@ -73,11 +96,15 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
               <div className="flex items-start space-x-3">
                 <ShoppingCart className="h-5 w-5 text-blue-600 mt-0.5" />
                 <div>
-                  <h3 className="font-semibold text-blue-800 mb-2">Platform Usage</h3>
+                  <h3 className="font-semibold text-blue-800 mb-2">
+                    Platform Usage
+                  </h3>
                   <p className="text-blue-700 mb-3">
-                    Inshuti y'Umubyeyi services are intended for personal use only, especially for those seeking 
-                    to market small-scale, home-based products. The platform may not be used for illegal activities, 
-                    fraudulent transactions, or to promote harmful or abusive content.
+                    Inshuti y'Umubyeyi services are intended for personal use
+                    only, especially for those seeking to market small-scale,
+                    home-based products. The platform may not be used for
+                    illegal activities, fraudulent transactions, or to promote
+                    harmful or abusive content.
                   </p>
                 </div>
               </div>
@@ -88,12 +115,17 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
               <div className="flex items-start space-x-3">
                 <Users className="h-5 w-5 text-green-600 mt-0.5" />
                 <div>
-                  <h3 className="font-semibold text-green-800 mb-2">Community Guidelines</h3>
+                  <h3 className="font-semibold text-green-800 mb-2">
+                    Community Guidelines
+                  </h3>
                   <p className="text-green-700">
-                    Users are expected to conduct themselves respectfully within support groups and training sessions. 
-                    Any form of harassment, hate speech, or offensive behavior will result in suspension or removal 
-                    from the platform. Additionally, the sharing of confidential or personal information from group 
-                    discussions outside the platform is strictly prohibited.
+                    Users are expected to conduct themselves respectfully within
+                    support groups and training sessions. Any form of
+                    harassment, hate speech, or offensive behavior will result
+                    in suspension or removal from the platform. Additionally,
+                    the sharing of confidential or personal information from
+                    group discussions outside the platform is strictly
+                    prohibited.
                   </p>
                 </div>
               </div>
@@ -104,12 +136,17 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
               <div className="flex items-start space-x-3">
                 <Shield className="h-5 w-5 text-purple-600 mt-0.5" />
                 <div>
-                  <h3 className="font-semibold text-purple-800 mb-2">Privacy & Data Protection</h3>
+                  <h3 className="font-semibold text-purple-800 mb-2">
+                    Privacy & Data Protection
+                  </h3>
                   <p className="text-purple-700">
-                    We value your privacy. Inshuti y'Umubyeyi collects only essential information for service delivery, 
-                    and we take reasonable steps to store it securely. Your data will not be sold or shared with third 
-                    parties without consent. While we are committed to protecting your information, you also agree to 
-                    take reasonable steps to protect your account from unauthorized use.
+                    We value your privacy. Inshuti y'Umubyeyi collects only
+                    essential information for service delivery, and we take
+                    reasonable steps to store it securely. Your data will not be
+                    sold or shared with third parties without consent. While we
+                    are committed to protecting your information, you also agree
+                    to take reasonable steps to protect your account from
+                    unauthorized use.
                   </p>
                 </div>
               </div>
@@ -117,30 +154,41 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
 
             {/* Marketplace Responsibilities */}
             <div className="mb-8">
-              <h3 className="font-semibold text-gray-800 mb-3">Marketplace Responsibilities</h3>
+              <h3 className="font-semibold text-gray-800 mb-3">
+                Marketplace Responsibilities
+              </h3>
               <p className="text-gray-700 mb-4">
-                For users participating in the online marketplace, you are responsible for the quality, accuracy, 
-                and safety of the products you list. Inshuti y'Umubyeyi takes responsibility for addressing disputes 
-                between buyers and sellers and is committed to offering timely support and fair resolution in such cases.
+                For users participating in the online marketplace, you are
+                responsible for the quality, accuracy, and safety of the
+                products you list. Inshuti y'Umubyeyi takes responsibility for
+                addressing disputes between buyers and sellers and is committed
+                to offering timely support and fair resolution in such cases.
               </p>
             </div>
 
             {/* Platform Integrity */}
             <div className="mb-8">
-              <h3 className="font-semibold text-gray-800 mb-3">Platform Integrity</h3>
+              <h3 className="font-semibold text-gray-800 mb-3">
+                Platform Integrity
+              </h3>
               <p className="text-gray-700 mb-4">
-                We reserve the right to suspend or terminate any account that violates these terms or threatens 
-                the platform's integrity. Inshuti y'umubyeyi is provided "as is," and we do not guarantee 
-                uninterrupted service or accept liability for any losses resulting from platform downtime or misuse.
+                We reserve the right to suspend or terminate any account that
+                violates these terms or threatens the platform's integrity.
+                Inshuti y'umubyeyi is provided "as is," and we do not guarantee
+                uninterrupted service or accept liability for any losses
+                resulting from platform downtime or misuse.
               </p>
             </div>
 
             {/* Updates to Terms */}
             <div className="mb-8">
-              <h3 className="font-semibold text-gray-800 mb-3">Updates to Terms</h3>
+              <h3 className="font-semibold text-gray-800 mb-3">
+                Updates to Terms
+              </h3>
               <p className="text-gray-700 mb-4">
-                From time to time, we may update these terms. You will be notified of significant changes, 
-                and continued use of the platform will indicate your acceptance of the revised terms.
+                From time to time, we may update these terms. You will be
+                notified of significant changes, and continued use of the
+                platform will indicate your acceptance of the revised terms.
               </p>
             </div>
 
@@ -149,10 +197,16 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-gray-600" />
                 <div>
-                  <h3 className="font-semibold text-gray-800 mb-1">Need Help?</h3>
+                  <h3 className="font-semibold text-gray-800 mb-1">
+                    Need Help?
+                  </h3>
                   <p className="text-gray-700">
-                    If you have any questions, please reach out to our support team at{' '}
-                    <a href="mailto:helpUmubyeyi@gmail.com" className="text-blue-600 hover:underline">
+                    If you have any questions, please reach out to our support
+                    team at{" "}
+                    <a
+                      href="mailto:helpUmubyeyi@gmail.com"
+                      className="text-blue-600 hover:underline"
+                    >
                       helpUmubyeyi@gmail.com
                     </a>
                   </p>
@@ -163,7 +217,8 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
             {/* Final Agreement */}
             <div className="p-4 bg-blue-600 text-white rounded-lg">
               <p className="font-medium text-center">
-                By proceeding, you confirm that you have read, understood, and agree to abide by these terms and conditions.
+                By proceeding, you confirm that you have read, understood, and
+                agree to abide by these terms and conditions.
               </p>
             </div>
           </div>
@@ -175,7 +230,7 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
             <FileText className="h-4 w-4" />
             <span>Please read all terms carefully before proceeding</span>
           </div>
-          
+
           <div className="flex space-x-3">
             <button
               onClick={onClose}
@@ -188,11 +243,11 @@ const TermsAndConditionsModal = ({ isOpen, onClose, onAccept }) => {
               disabled={!hasScrolledToBottom}
               className={`px-6 py-2 rounded-lg font-medium transition-colors ${
                 hasScrolledToBottom
-                  ? 'bg-blue-600 text-white hover:bg-blue-700'
-                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  ? "bg-blue-600 text-white hover:bg-blue-700"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
               }`}
             >
-              {hasScrolledToBottom ? 'Accept Terms' : 'Scroll to Accept'}
+              {hasScrolledToBottom ? "Accept Terms" : "Scroll to Accept"}
             </button>
           </div>
         </div>
@@ -270,25 +325,55 @@ const RegistrationFormWithTerms = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) {
       return;
     }
+    try {
+      setLoading(true);
 
-    setLoading(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsRegistered(true);
+      //  API call to register user
+      const payload = {
+        fullName: formData.fullName,
+        username: formData.username,
+        phone: formData.phone,
+        password: formData.password,
+        email: formData.email,
+      };
+      const response = await axios.post(
+        "https://ecommerce-backend-0v7j.onrender.com/api/auth/register",
+        payload
+      );
+      console.log(response);
+      if (response.status === 200) {
+        setLoading(false);
+        notification.success({
+          message: "Account created successfully",
+          description: "Please login to continue",
+        });
+      } else {
+        setLoading(false);
+        notification.error({
+          message: "Account creation failed",
+          description: "Please try again",
+        });
+      }
+      window.location.replace("/login");
+    } catch (error) {
+      console.log(error.response.data.message);
       setLoading(false);
-    }, 2000);
+      notification.error({
+        message: error.response.data.message || "Account creation failed",
+        description: "Please try again",
+      });
+    }
   };
 
   const handleTermsAccept = () => {
     setTermsAccepted(true);
-    setErrors(prev => ({ ...prev, terms: "" }));
+    setErrors((prev) => ({ ...prev, terms: "" }));
   };
 
   if (isRegistered) {
@@ -300,8 +385,18 @@ const RegistrationFormWithTerms = () => {
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
               <div className="px-6 py-8 text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <svg
+                    className="w-8 h-8 text-green-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2 ">
@@ -310,9 +405,9 @@ const RegistrationFormWithTerms = () => {
                 <p className="text-gray-600 mb-6">
                   Your account has been created successfully.
                 </p>
-                <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                <a href='Login'><button className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">
                   Continue to Dashboard
-                </button>
+                </button></a>
               </div>
             </div>
           </div>
@@ -332,7 +427,9 @@ const RegistrationFormWithTerms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
                 Join Inshuti y'umubyeyi
               </h2>
-              <p className="text-gray-600">Supporting pregnant women in Rwanda</p>
+              <p className="text-gray-600">
+                Supporting pregnant women in Rwanda
+              </p>
             </div>
 
             {/* Form */}
@@ -432,7 +529,7 @@ const RegistrationFormWithTerms = () => {
                         className="absolute right-3 top-3 text-gray-400"
                         onClick={() => setShowPassword(!showPassword)}
                       >
-                        {showPassword ? '🙈' : '👁️'}
+                        {showPassword ? "🙈" : "👁️"}
                       </button>
                     </div>
                     {errors.password && (
@@ -456,13 +553,17 @@ const RegistrationFormWithTerms = () => {
                       <button
                         type="button"
                         className="absolute right-3 top-3 text-gray-400"
-                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                        onClick={() =>
+                          setShowConfirmPassword(!showConfirmPassword)
+                        }
                       >
-                        {showConfirmPassword ? '🙈' : '👁️'}
+                        {showConfirmPassword ? "🙈" : "👁️"}
                       </button>
                     </div>
                     {errors.confirmPassword && (
-                      <p className="text-red-600 text-sm">{errors.confirmPassword}</p>
+                      <p className="text-red-600 text-sm">
+                        {errors.confirmPassword}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -477,13 +578,13 @@ const RegistrationFormWithTerms = () => {
                       onChange={(e) => {
                         setTermsAccepted(e.target.checked);
                         if (e.target.checked) {
-                          setErrors(prev => ({ ...prev, terms: "" }));
+                          setErrors((prev) => ({ ...prev, terms: "" }));
                         }
                       }}
                       className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                     />
                     <label htmlFor="terms" className="text-sm text-gray-700">
-                      I agree to the{' '}
+                      I agree to the{" "}
                       <button
                         type="button"
                         onClick={() => setShowTermsModal(true)}
@@ -504,11 +605,11 @@ const RegistrationFormWithTerms = () => {
                   disabled={loading}
                   className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
                     loading
-                      ? 'bg-gray-400 cursor-not-allowed'
-                      : 'bg-blue-600 hover:bg-blue-700'
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-blue-600 hover:bg-blue-700"
                   } text-white`}
                 >
-                  {loading ? 'Creating Account...' : 'Create Account'}
+                  {loading ? "Creating Account..." : "Create Account"}
                 </button>
               </div>
             </div>
@@ -516,8 +617,11 @@ const RegistrationFormWithTerms = () => {
             {/* Footer */}
             <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 text-center">
               <p className="text-sm text-gray-600">
-                Already have an account?{' '}
-                <a href="/login" className="font-medium text-blue-600 hover:text-blue-800">
+                Already have an account?{" "}
+                <a
+                  href="/login"
+                  className="font-medium text-blue-600 hover:text-blue-800"
+                >
                   Sign in here
                 </a>
               </p>
