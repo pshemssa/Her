@@ -175,7 +175,7 @@ const ModernNavBar = () => {
               <div className="flex items-center space-x-6">
                 <div className="flex items-center space-x-2 group cursor-pointer">
                   <Phone size={12} className="text-emerald-400 group-hover:text-emerald-300 transition-colors" />
-                  <span className="group-hover:text-emerald-100 transition-colors">+250 787 435 731</span>
+                  <span className="group-hover:text-emerald-100 transition-colors">+250 781 196 712</span>
                 </div>
                 <div className="flex items-center space-x-2 group cursor-pointer">
                   <Mail size={12} className="text-blue-400 group-hover:text-blue-300 transition-colors" />
@@ -208,7 +208,7 @@ const ModernNavBar = () => {
                 </div>
                 <div className="text-left">
                   <span className="text-xl font-bold text-gray-900 block leading-tight">
-                    Inshuti Y'Umuryango
+                    Inshuti Y'Umubyeyi
                   </span>
                   <span className="text-sm text-gray-600 font-medium">
                     Premium Services
@@ -326,7 +326,7 @@ const ModernNavBar = () => {
               </div>
               <div className="text-left">
                 <span className="text-base font-bold text-gray-900 block leading-tight">
-                  Inshuti Y'Umuryango
+                  Inshuti Y'Umubyeyi
                 </span>
                 <span className="text-xs text-gray-600">Premium Services</span>
               </div>
@@ -432,11 +432,11 @@ const ModernNavBar = () => {
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center space-x-3">
                         <Phone size={14} className="text-emerald-300" />
-                        <span>+250 787 435 731</span>
+                        <span>+250 781 196 712</span>
                       </div>
                       <div className="flex items-center space-x-3">
                         <Mail size={14} className="text-blue-300" />
-                        <span>help@highroup.rw</span>
+                        <span>helpUmubyeyi@gmail.com</span>
                       </div>
                       <div className="flex items-center space-x-3">
                         <MapPin size={14} className="text-orange-300" />
