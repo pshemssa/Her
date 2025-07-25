@@ -46,15 +46,15 @@ const Footer = () => (
           <div className="flex flex-col space-y-3">
             <div className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors duration-200">
               {/* <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" /> */}
-              <span>help@highroup.rw</span>
+              <span>helpUmubyeyi@gmail.com</span>
             </div>
             <div className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors duration-200">
               {/* <FontAwesomeIcon icon={faPhone} className="w-4 h-4" /> */}
-              <span>(+250) 78743 8701</span>
+              <span>(+250) 78119 6712</span>
             </div>
             <div className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors duration-200">
               {/* <FontAwesomeIcon icon={faMapMarkerAlt} className="w-4 h-4" /> */}
-              <span>IMA House, Kicukiro, Kigali</span>
+              <span>Kicukiro, Kigali</span>
             </div>
           </div>
         </div>
