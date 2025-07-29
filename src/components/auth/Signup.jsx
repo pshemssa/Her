@@ -348,7 +348,7 @@ const RegistrationFormWithTerms = () => {
       );
       console.log(response);
       if (response.status === 200) {
-        setLoading(false);
+        setLoading(true);
         notification.success({
           message: "Account created successfully",
           description: "Please login to continue",
