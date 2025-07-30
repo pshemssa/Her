@@ -40,7 +40,7 @@ const ProductListing = ({ title = "Featured Products", subtitle = "Discover amaz
 
     const handleBuyNow = (product) => {
         const message = `Hi, I'm interested in buying "${product.name}" for RWF ${product.price}. Can you provide more details?`;
-        const whatsappUrl = `https://wa.me/250787438701?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/250781196712?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
 
